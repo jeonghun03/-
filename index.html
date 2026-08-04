@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전북대 관심 공지 모음</title>
+<style>
+  :root {
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --text: #1c1c1e;
+    --muted: #6b6b70;
+    --accent: #1a56db;
+    --border: #e5e5ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121214;
+      --card: #1c1c1e;
+      --text: #f2f2f3;
+      --muted: #9a9a9e;
+      --accent: #6ea8fe;
+      --border: #2c2c2e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    padding: 24px 16px 12px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 14px; margin: 0; }
+  .controls {
+    max-width: 760px;
+    margin: 12px auto 0;
+    padding: 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .chip.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  main {
+    max-width: 760px;
+    margin: 16px auto 40px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  a.item {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--text);
+  }
+  a.item:hover { border-color: var(--accent); }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .title { font-size: 15px; font-weight: 600; line-height: 1.4; }
+  .date { color: var(--muted); font-size: 12px; margin-top: 6px; }
+  .empty { color: var(--muted); text-align: center; padding: 40px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>전북대 관심 공지 모음</h1>
+  <p class="sub">모집 · 프로젝트 · 장학금 · 선발 · AI · 빅데이터 · 산업 키워드가 포함된 최근 공지</p>
+</header>
+<div class="controls" id="filters"></div>
+<main id="list"></main>
+
+<script>
+const KEYWORDS = ["모집","프로젝트","장학금","선발","AI","빅데이터","산업"];
+let activeKeyword = null;
+let allNotices = [];
+
+async function load() {
+  const res = await fetch("data/notices.json", { cache: "no-store" });
+  allNotices = await res.json();
+  renderFilters();
+  render();
+}
+
+function renderFilters() {
+  const el = document.getElementById("filters");
+  el.innerHTML = "";
+  const allChip = makeChip("전체", null);
+  el.appendChild(allChip);
+  KEYWORDS.forEach(k => el.appendChild(makeChip(k, k)));
+}
+
+function makeChip(label, keyword) {
+  const btn = document.createElement("button");
+  btn.className = "chip" + (activeKeyword === keyword ? " active" : "");
+  btn.textContent = label;
+  btn.onclick = () => {
+    activeKeyword = keyword;
+    renderFilters();
+    render();
+  };
+  return btn;
+}
+
+function render() {
+  const list = document.getElementById("list");
+  const items = activeKeyword
+    ? allNotices.filter(n => n.title.includes(activeKeyword))
+    : allNotices;
+
+  if (items.length === 0) {
+    list.innerHTML = '<p class="empty">표시할 공지가 없습니다.</p>';
+    return;
+  }
+
+  list.innerHTML = items.map(n => `
+    <a class="item" href="${n.link}" target="_blank" rel="noopener">
+      <span class="badge">${n.board}</span>
+      <span class="title">${escapeHtml(n.title)}</span>
+      <div class="date">${n.date}</div>
+    </a>
+  `).join("");
+}
+
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+load();
+</script>
+</body>
+</html>
