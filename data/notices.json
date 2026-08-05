@@ -1,18 +1,6 @@
 [
   {
     "board": "교내공지",
-    "title": "[전북국제개발협력센터] KOICA 귀국인재 리크루터 4기 모집",
-    "date": "2026-08-04",
-    "link": "https://www.jbnu.ac.kr/web/Board/215828/detailView.do"
-  },
-  {
-    "board": "학생공지",
-    "title": "(SK SUNNY) 2026년 SK SUNNY 청년발전행동 쓰촨 지역 참가자 선발 안내",
-    "date": "2026-08-04",
-    "link": "https://www.jbnu.ac.kr/web/Board/215836/detailView.do"
-  },
-  {
-    "board": "교내공지",
     "title": "2026년 제 2차 전북대학교 창업보육센터 신규 입주기업 모집 공고(완주군 소재 3센터)",
     "date": "2026-08-04",
     "link": "https://www.jbnu.ac.kr/web/Board/215863/detailView.do"
@@ -22,6 +10,24 @@
     "title": "JST 취·창업 동아리 Career+ 추가 모집 안내",
     "date": "2026-08-04",
     "link": "https://www.jbnu.ac.kr/web/Board/215854/detailView.do"
+  },
+  {
+    "board": "학생공지",
+    "title": "(SK SUNNY) 2026년 SK SUNNY 청년발전행동 쓰촨 지역 참가자 선발 안내",
+    "date": "2026-08-04",
+    "link": "https://www.jbnu.ac.kr/web/Board/215836/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "[전북국제개발협력센터] KOICA 귀국인재 리크루터 4기 모집",
+    "date": "2026-08-04",
+    "link": "https://www.jbnu.ac.kr/web/Board/215828/detailView.do"
+  },
+  {
+    "board": "학생공지",
+    "title": "[참여 안내] 2026학년도 하계 JBNU AIX-PBL 워크숍 및 성과공유회 개최",
+    "date": "2026-08-03",
+    "link": "https://www.jbnu.ac.kr/web/Board/215805/detailView.do"
   },
   {
     "board": "교내공지",
@@ -58,11 +64,5 @@
     "title": "2026학년도 1차 [편입&복학&전과생 대학생활 적응 UP 프로그램] 참여자 모집",
     "date": "2026-08-03",
     "link": "https://www.jbnu.ac.kr/web/Board/215777/detailView.do"
-  },
-  {
-    "board": "학생공지",
-    "title": "[참여 안내] 2026학년도 하계 JBNU AIX-PBL 워크숍 및 성과공유회 개최",
-    "date": "2026-08-03",
-    "link": "https://www.jbnu.ac.kr/web/Board/215805/detailView.do"
   }
 ]

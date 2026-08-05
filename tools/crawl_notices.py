@@ -126,6 +126,11 @@ def load_existing() -> list[dict]:
     return []
 
 
+def post_id_from_link(link: str) -> int:
+    m = re.search(r"/Board/(\d+)/", link)
+    return int(m.group(1)) if m else 0
+
+
 def merge(existing: list[dict], new_items: list[dict]) -> list[dict]:
     seen_links = {item["link"] for item in existing}
     merged = list(existing)
@@ -133,7 +138,8 @@ def merge(existing: list[dict], new_items: list[dict]) -> list[dict]:
         if item["link"] not in seen_links:
             merged.append(item)
             seen_links.add(item["link"])
-    merged.sort(key=lambda i: i["date"], reverse=True)
+    # 같은 날짜 안에서는 게시글 번호가 클수록(=최근에 올라온 글) 위로 오도록 정렬
+    merged.sort(key=lambda i: (i["date"], post_id_from_link(i["link"])), reverse=True)
     return merged
 
 
