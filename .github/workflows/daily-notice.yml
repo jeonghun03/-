@@ -22,6 +22,15 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
+      - name: Diagnose network (temporary)
+        run: |
+          echo "Runner public IP:"
+          curl -s --max-time 10 https://ifconfig.me || echo "ifconfig.me 조회 실패"
+          echo ""
+          echo "jbnu.ac.kr connectivity test:"
+          curl -v --max-time 15 https://www.jbnu.ac.kr/ || echo "연결 실패 (위 로그 참고)"
+        continue-on-error: true
+
       - name: Run crawler
         run: python tools/crawl_notices.py
 
