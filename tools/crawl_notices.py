@@ -95,6 +95,8 @@ def crawl_board(board_name: str, board_url: str) -> list[dict]:
     collected = []
     page = 1
     while True:
+        if page > 1:
+            time.sleep(2)  # 연속 요청 시 서버가 봇으로 의심해 연결을 끊는 것을 방지
         html = fetch_list_html(board_url, page)
         items = parse_list(html, board_name)
         if not items:
@@ -132,7 +134,9 @@ def merge(existing: list[dict], new_items: list[dict]) -> list[dict]:
 
 def main():
     all_recent = []
-    for board_name, board_url in BOARDS.items():
+    for i, (board_name, board_url) in enumerate(BOARDS.items()):
+        if i > 0:
+            time.sleep(2)
         all_recent.extend(crawl_board(board_name, board_url))
 
     filtered = [item for item in all_recent if matches_keyword(item["title"])]
