@@ -97,7 +97,12 @@ def crawl_board(board_name: str, board_url: str) -> list[dict]:
     while True:
         if page > 1:
             time.sleep(2)  # 연속 요청 시 서버가 봇으로 의심해 연결을 끊는 것을 방지
-        html = fetch_list_html(board_url, page)
+        try:
+            html = fetch_list_html(board_url, page)
+        except requests.exceptions.RequestException as e:
+            # 한 페이지가 끝까지 실패해도 이미 수집한 내용은 버리지 않고 이번 실행은 여기서 마무리
+            print(f"[경고] {board_name} {page}페이지 수집 실패, 이번 실행은 여기까지만 반영: {e}")
+            break
         items = parse_list(html, board_name)
         if not items:
             break
