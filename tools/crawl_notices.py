@@ -6,6 +6,7 @@
 """
 import json
 import re
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -29,11 +30,19 @@ DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "notices.json"
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
 
-def fetch_list_html(board_url: str, page_index: int = 1) -> str:
-    resp = requests.get(board_url, params={"pageIndex": page_index}, headers=HEADERS, timeout=15)
-    resp.raise_for_status()
-    resp.encoding = resp.apparent_encoding
-    return resp.text
+def fetch_list_html(board_url: str, page_index: int = 1, retries: int = 3) -> str:
+    last_error = None
+    for attempt in range(retries):
+        try:
+            resp = requests.get(board_url, params={"pageIndex": page_index}, headers=HEADERS, timeout=30)
+            resp.raise_for_status()
+            resp.encoding = resp.apparent_encoding
+            return resp.text
+        except requests.exceptions.RequestException as e:
+            last_error = e
+            if attempt < retries - 1:
+                time.sleep(5)
+    raise last_error
 
 
 def parse_list(html: str, board_name: str) -> list[dict]:
