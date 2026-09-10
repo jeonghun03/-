@@ -1,6 +1,66 @@
 [
   {
     "board": "교내공지",
+    "title": "<2026학년도 하반기 취업동아리 모집 안내(~9.11. 14시 마감)>",
+    "date": "2026-09-10",
+    "link": "https://www.jbnu.ac.kr/web/Board/217324/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "2026년도 전북대인의 날 행사 추가모집 안내",
+    "date": "2026-09-10",
+    "link": "https://www.jbnu.ac.kr/web/Board/217322/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "[교육혁신본부] 2026학년도 AI 활용 나만의 학습법 공모전 운영 안내",
+    "date": "2026-09-09",
+    "link": "https://www.jbnu.ac.kr/web/Board/217301/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "2026학년도 J-ABLE 활용 학습튜터링 튜터-튜티 모집 안내",
+    "date": "2026-09-09",
+    "link": "https://www.jbnu.ac.kr/web/Board/217300/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "2027년 1학기 CAMPUS Asia-AIMS 해외파견교환학생 선발 안내",
+    "date": "2026-09-09",
+    "link": "https://www.jbnu.ac.kr/web/Board/217296/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "[BLUE BELT] 2026년 하반기 입사지원서 작성법 집중교육 참여자 모집 안내(졸업생 참여 가능)",
+    "date": "2026-09-09",
+    "link": "https://www.jbnu.ac.kr/web/Board/217292/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "[SW중심대학사업단] (연장)2026학년도 2학기 SW전공 멘토링 프로그램 멘토/멘티 모집 안내(~9/11까지)",
+    "date": "2026-09-09",
+    "link": "https://www.jbnu.ac.kr/web/Board/217287/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "2027-1학기 해외자매대학 파견교환학생 1차 선발 결과",
+    "date": "2026-09-09",
+    "link": "https://www.jbnu.ac.kr/web/Board/217286/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "2026-2학기 JBNU Campus Buddy 프로그램 선발 결과 안내",
+    "date": "2026-09-09",
+    "link": "https://www.jbnu.ac.kr/web/Board/217273/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "2026년 「데이터+AI 혁신 챌린지」 통합경진대회 데이터 문제해결 부문 홍보 협조 요청",
+    "date": "2026-09-09",
+    "link": "https://www.jbnu.ac.kr/web/Board/217272/detailView.do"
+  },
+  {
+    "board": "교내공지",
     "title": "[RED/ORANGE BELT] 큰사람프로젝트 'AI 면접' 항목 이수 방법 안내",
     "date": "2026-09-09",
     "link": "https://www.jbnu.ac.kr/web/Board/217264/detailView.do"
@@ -24,6 +84,12 @@
     "link": "https://www.jbnu.ac.kr/web/Board/217226/detailView.do"
   },
   {
+    "board": "교내공지",
+    "title": "<2026학년도 하반기 취업동아리 모집 안내(~9.11. 14시 마감)>",
+    "date": "2026-09-08",
+    "link": "https://www.jbnu.ac.kr/web/Board/217196/detailView.do"
+  },
+  {
     "board": "학생공지",
     "title": "(лҢҖм „лҢҖн•ҷкөҗ) HOP(HIRA, Open AI Hub, Private) Biohealth AI Challenge нҷҚліҙ л°Ҹ м°ём—¬ м•ҲлӮҙ",
     "date": "2026-09-08",
@@ -31,9 +97,27 @@
   },
   {
     "board": "교내공지",
+    "title": "[빅데이터 혁신융합대학사업단] BIG DATA 멘토링 프로그램 안내(재안내,~9/10)",
+    "date": "2026-09-08",
+    "link": "https://www.jbnu.ac.kr/web/Board/217176/detailView.do"
+  },
+  {
+    "board": "교내공지",
     "title": "[көӯлҰҪлҢҖмңЎм„ұ] гҖҢDBpia, KISS AI нҷңмҡ© көҗмңЎгҖҚ м•ҲлӮҙ(лҸ„м„ңкҙҖ л§ҲмқјлҰ¬м§Җ, нҒ° мӮ¬лһҢ нҸ¬мқёнҠё мқём •)",
     "date": "2026-09-07",
     "link": "https://www.jbnu.ac.kr/web/Board/217160/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "[교육혁신본부] 2026학년도 스픽업 챌린지 모집 안내",
+    "date": "2026-09-07",
+    "link": "https://www.jbnu.ac.kr/web/Board/217156/detailView.do"
+  },
+  {
+    "board": "교내공지",
+    "title": "2026년 교내 하반기 채용설명회 일정 및 참여자 모집 안내",
+    "date": "2026-09-07",
+    "link": "https://www.jbnu.ac.kr/web/Board/217152/detailView.do"
   },
   {
     "board": "교내공지",
